@@ -45,7 +45,7 @@
 ---
 
 ## 🤝 Coach Check-in
-Setiap Ahad 21.00 WIB → buka [Issue baru](https://github.com/YOUR_USERNAME/12w-fullstack-go/issues) dengan label `week-X`
+Setiap Ahad 21.00 WIB → buka [Issue baru](https://github.com/Hadirizaldi/12w-fullstack-go/issues) dengan label `week-X`
 
 ---
 
