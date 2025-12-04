@@ -1,28 +1,10 @@
 package leetcode
 
 import (
-	"reflect"
-	"sort"
 	"testing"
+
+	"github.com/Hadirizaldi/12w-fullstack-go/leetcode/helpers"
 )
-
-// Catatan: Fungsi Intersection (yang Anda buat) dan mapTolist harus berada di package main
-
-// Fungsi pembanding yang benar untuk slice yang tidak terurut (Order-Agnostic Comparison)
-func compareSlicesIgnoringOrder(a, b []int) bool {
-    // 1. Cek Panjang
-    if len(a) != len(b) {
-        return false
-    }
-    
-    // 2. Urutkan kedua slice
-    // Ini adalah cara standar untuk membandingkan slice yang tidak peduli urutan
-    sort.Ints(a)
-    sort.Ints(b)
-
-    // 3. Bandingkan kontennya yang sudah diurutkan (DeepEqual aman untuk slice terurut)
-    return reflect.DeepEqual(a, b)
-}
 
 
 func TestIntersection(t *testing.T) {
@@ -42,7 +24,7 @@ func TestIntersection(t *testing.T) {
         got := Intersection(tt.nums1, tt.nums2)
 
         // GUNAKAN FUNGSI PEMBANDING KHUSUS
-        if !compareSlicesIgnoringOrder(got, tt.want) {
+        if !helpers.CompareSlicesIgnoringOrder(got, tt.want) {
             // Kita harus membuat salinan slice untuk di-sort saat error message
             // karena sorting di dalam compareSlicesIgnoringOrder mengubah slice aslinya.
             t.Errorf("Intersection(%v, %v) = %v, want %v", tt.nums1, tt.nums2, got, tt.want)
